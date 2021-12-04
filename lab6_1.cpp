@@ -7,9 +7,10 @@ using namespace std;
 int main() {
 	setlocale(0, "RUS");
 	int n;
-	cout << "Ââåäèòå ðàçìåðíîñòü êâàäðàòíîé ìàòðèöû A: ";
+	cout << "hhhh";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã°Ã Ã§Ã¬Ã¥Ã°Ã­Ã®Ã±Ã²Ã¼ ÃªÃ¢Ã Ã¤Ã°Ã Ã²Ã­Ã®Ã© Ã¬Ã Ã²Ã°Ã¨Ã¶Ã» A: ";
 	correct_input_N(n);
-	cout << "Ââåäèòå ìàòðèöó A: \n";
+	cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¬Ã Ã²Ã°Ã¨Ã¶Ã³ A: \n";
 	double ** original_matrix = matrix_input(n);
 	double ** resoult_matrix = func_calc(original_matrix, n);
 	clear_memory_after_matrix(original_matrix, n);
