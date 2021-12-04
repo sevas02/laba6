@@ -25,5 +25,5 @@ double** matrix_addition_matrix(double** matr_1, double** matr_2, int n);
 double** matrix_multiply_matrix(double** matr_1, double** matr_2, int n);
 
 //расчёт функции f(x) = 3*x^3 + 5*x^2 + x - 2. при f(A^2)
-double** function_calculation(double** orig_matr, int n);
+double** func_calc(double** orig_matr, int n);
 #endif

@@ -11,7 +11,7 @@ int main() {
 	correct_input_N(n);
 	cout << "¬ведите матрицу A: \n";
 	double ** original_matrix = matrix_input(n);
-	double ** resoult_matrix = function_calculation(original_matrix, n);
+	double ** resoult_matrix = func_calc(original_matrix, n);
 	clear_memory_after_matrix(original_matrix, n);
 	clear_memory_after_matrix(resoult_matrix, n);
 	return 0;

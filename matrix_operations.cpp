@@ -102,7 +102,7 @@ double** matrix_multiply_matrix(double** matr_1, double** matr_2, int n) {
 }
 
 //расчёт функции f(x) = 3*x^3 + 5*x^2 + x - 2. при f(A^2)
-double** function_calculation(double** orig_matr, int n) {
+double** func_calc(double** orig_matr, int n) {
 	cout << "\nПосчитаем выражение f(x) = 3*x^3 + 5*x^2 + x - 2; при f(A^2)\n";
 	cout << "\nA^2 = ";
 	orig_matr = matrix_multiply_matrix(orig_matr, orig_matr, n);
