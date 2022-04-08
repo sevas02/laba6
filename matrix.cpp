@@ -1,12 +1,12 @@
-#include "matrix.h"
+п»ї#include "matrix.h"
 #include "correct_input.h"
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-//создание нулевой квадратной матрицы
+//СЃРѕР·РґР°РЅРёРµ РЅСѓР»РµРІРѕР№ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 double** sqr_matrix_nul_create(int n) {
-	double** out_matr = new double*[n];
+	double** out_matr = new double* [n];
 	for (int i = 0; i < n; i++)
 		out_matr[i] = new double[n];
 
@@ -16,27 +16,27 @@ double** sqr_matrix_nul_create(int n) {
 	return out_matr;
 }
 
-//отчистка памяти после создания матрицы
+//РѕС‚С‡РёСЃС‚РєР° РїР°РјСЏС‚Рё РїРѕСЃР»Рµ СЃРѕР·РґР°РЅРёСЏ РјР°С‚СЂРёС†С‹
 void matrix_memory_clear(double** matr, int n) {
 	for (int i = 0; i < n; i++)
 		delete[] matr[i];
 	delete[] matr;
 }
 
-//ввод квадратной матрицы
+//РІРІРѕРґ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 double** sqr_matrix_input(int n) {
 	double** orig_matr = sqr_matrix_nul_create(n);
 	double element;
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < n; j++) {
-			cout << "A[" << i + 1 << "][" << j + 1 << "] = ";
+			cout << "[" << i + 1 << "][" << j + 1 << "] = ";
 			correct_input_R(element);
 			orig_matr[i][j] = element;
 		}
 	return orig_matr;
 }
 
-//вывод квадратной матрицы
+//РІС‹РІРѕРґ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 void sqr_matrix_output(double** orig_matr, int n) {
 	cout << endl;
 	for (int i = 0; i < n; i++) {
@@ -46,7 +46,7 @@ void sqr_matrix_output(double** orig_matr, int n) {
 	}
 }
 
-//функция сложения квадратной матрицы с числом
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹ СЃ С‡РёСЃР»РѕРј
 double** sqr_matrix_addition_num(double** matr, int n, int num) {
 	double** out_matr = sqr_matrix_nul_create(n);
 
@@ -60,7 +60,7 @@ double** sqr_matrix_addition_num(double** matr, int n, int num) {
 	return out_matr;
 }
 
-//функция умножения квадратной матрицы на число
+//С„СѓРЅРєС†РёСЏ СѓРјРЅРѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹ РЅР° С‡РёСЃР»Рѕ
 double** sqr_matrix_multiply_num(double** matr, int n, int num) {
 	double** out_matr = sqr_matrix_nul_create(n);
 
@@ -70,7 +70,7 @@ double** sqr_matrix_multiply_num(double** matr, int n, int num) {
 	return out_matr;
 }
 
-//функция сложения квадратных матриц
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅС‹С… РјР°С‚СЂРёС†
 double** sqr_matrix_addition_matrix(double** matr_1, double** matr_2, int n) {
 	double** out_matr = sqr_matrix_nul_create(n);
 
@@ -80,7 +80,7 @@ double** sqr_matrix_addition_matrix(double** matr_1, double** matr_2, int n) {
 	return out_matr;
 }
 
-//функция перемножения квадратных матриц
+//С„СѓРЅРєС†РёСЏ РїРµСЂРµРјРЅРѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅС‹С… РјР°С‚СЂРёС†
 double** sqr_matrix_multiply_matrix(double** matr_1, double** matr_2, int n) {
 	double** out_matr = sqr_matrix_nul_create(n);
 
@@ -91,7 +91,7 @@ double** sqr_matrix_multiply_matrix(double** matr_1, double** matr_2, int n) {
 	return out_matr;
 }
 
-//расчёт матрицы X = A^2
+//СЂР°СЃС‡С‘С‚ РјР°С‚СЂРёС†С‹ X = A^2
 double** sqr_matrix_pow_2(double** orig_matr, int n) {
 	double** out_matr = sqr_matrix_nul_create(n);
 
@@ -99,9 +99,9 @@ double** sqr_matrix_pow_2(double** orig_matr, int n) {
 	return out_matr;
 }
 
-//расчёт функции f(x) = 3*x^3 + 5*x^2 + x - 2. 
+//СЂР°СЃС‡С‘С‚ С„СѓРЅРєС†РёРё f(x) = 3*x^3 + 5*x^2 + x - 2. 
 double** function_calculation(double** x_matr, int n) {
-	cout << "\n\nПодсчитаем выражение f(x) = 3*x^3 + 5*x^2 + x - 2";
+	cout << "\n\nРџРѕРґСЃС‡РёС‚Р°РµРј РІС‹СЂР°Р¶РµРЅРёРµ f(x) = 3*x^3 + 5*x^2 + x - 2";
 	cout << "\nx^2 = \n";
 	double** x_pow_2 = sqr_matrix_multiply_matrix(x_matr, x_matr, n);
 	sqr_matrix_output(x_pow_2, n);
@@ -132,16 +132,16 @@ double** function_calculation(double** x_matr, int n) {
 	return resoult;
 }
 
-//Возвращает матрицу для нахождения минора, путем вырчеркивания row-ой строки и col-того столбца матрицы matr;
-void matrix_for_minor(double **matr, int n, int row, int col, double **minor_matr) {
-	int row_shift = 0; //Смещение индекса строки в матрице
-	int col_shift = 0; //Смещение индекса столбца в матрице
+//Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°С‚СЂРёС†Сѓ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РјРёРЅРѕСЂР°, РїСѓС‚РµРј РІС‹СЂС‡РµСЂРєРёРІР°РЅРёСЏ row-РѕР№ СЃС‚СЂРѕРєРё Рё col-С‚РѕРіРѕ СЃС‚РѕР»Р±С†Р° РјР°С‚СЂРёС†С‹ matr;
+void matrix_for_minor(double** matr, int n, int row, int col, double** minor_matr) {
+	int row_shift = 0; //РЎРјРµС‰РµРЅРёРµ РёРЅРґРµРєСЃР° СЃС‚СЂРѕРєРё РІ РјР°С‚СЂРёС†Рµ
+	int col_shift = 0; //РЎРјРµС‰РµРЅРёРµ РёРЅРґРµРєСЃР° СЃС‚РѕР»Р±С†Р° РІ РјР°С‚СЂРёС†Рµ
 	for (int i = 0; i < n - 1; i++) {
-		//Пропустить row-ую строку
+		//РџСЂРѕРїСѓСЃС‚РёС‚СЊ row-СѓСЋ СЃС‚СЂРѕРєСѓ
 		if (i == row)
 			row_shift = 1;
 		for (int j = 0; j < n - 1; j++) {
-			//Пропустить col-ый столбец
+			//РџСЂРѕРїСѓСЃС‚РёС‚СЊ col-С‹Р№ СЃС‚РѕР»Р±РµС†
 			if (j == col)
 				col_shift = 1;
 			minor_matr[i][j] = matr[i + row_shift][j + col_shift];
@@ -149,37 +149,37 @@ void matrix_for_minor(double **matr, int n, int row, int col, double **minor_mat
 	}
 }
 
-//Рекурсивная функция для нахождения определителя матрицы. 
+//Р РµРєСѓСЂСЃРёРІРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РѕРїСЂРµРґРµР»РёС‚РµР»СЏ РјР°С‚СЂРёС†С‹. 
 int matrix_det(double** matr, int n) {
-	//временная матрица, полученная вычеркиванием i-ой строки и 0-ого столбца
+	//РІСЂРµРјРµРЅРЅР°СЏ РјР°С‚СЂРёС†Р°, РїРѕР»СѓС‡РµРЅРЅР°СЏ РІС‹С‡РµСЂРєРёРІР°РЅРёРµРј i-РѕР№ СЃС‚СЂРѕРєРё Рё 0-РѕРіРѕ СЃС‚РѕР»Р±С†Р°
 	double** temp = sqr_matrix_nul_create(n - 1);
 	double det = 0;
 	double alg_dop = 0;
-	//если дошли до минора 2х2, то возвращаекм его
+	//РµСЃР»Рё РґРѕС€Р»Рё РґРѕ РјРёРЅРѕСЂР° 2С…2, С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµРєРј РµРіРѕ
 	if (n == 2) {
 		alg_dop = matr[0][0] * matr[1][1] - matr[0][1] * matr[1][0];
 		return alg_dop;
 	}
-	//условие выхода из рекурсии
+	//СѓСЃР»РѕРІРёРµ РІС‹С…РѕРґР° РёР· СЂРµРєСѓСЂСЃРёРё
 	if (n == 1) {
 		return matr[0][0];
 	}
-	//знак для высчитывания алгебраического дополнения
+	//Р·РЅР°Рє РґР»СЏ РІС‹СЃС‡РёС‚С‹РІР°РЅРёСЏ Р°Р»РіРµР±СЂР°РёС‡РµСЃРєРѕРіРѕ РґРѕРїРѕР»РЅРµРЅРёСЏ
 	int sign = 1;
 	for (int i = 0; i < n; i++) {
-		//Удаляем из матрицы i-ую строку и 0-ый столбец
+		//РЈРґР°Р»СЏРµРј РёР· РјР°С‚СЂРёС†С‹ i-СѓСЋ СЃС‚СЂРѕРєСѓ Рё 0-С‹Р№ СЃС‚РѕР»Р±РµС†
 		matrix_for_minor(matr, n, i, 0, temp);
 
 		double minor = matrix_det(temp, n - 1);
 		alg_dop = (sign * matr[i][0] * minor);
 
-		//выводим минор i-ой, 0-ый
-		//sqr_matrix_output(temp, n - 1);
-		//cout << endl;
-		//пошаговый вывод
-		//cout << sign << " * " << matr[i][0] << " * " << minor << " = " << alg_dop << endl << endl;
+		//РІС‹РІРѕРґРёРј РјРёРЅРѕСЂ i-РѕР№, 0-С‹Р№
+		sqr_matrix_output(temp, n - 1);
+		cout << endl;
+		//РїРѕС€Р°РіРѕРІС‹Р№ РІС‹РІРѕРґ
+		cout << sign << " * " << matr[i][0] << " * " << minor << " = " << alg_dop << endl << endl;
 
-		//меняем знак
+		//РјРµРЅСЏРµРј Р·РЅР°Рє
 		sign *= -1;
 		det += alg_dop;
 	}
@@ -187,9 +187,9 @@ int matrix_det(double** matr, int n) {
 	return det;
 }
 
-//создание нулевой матрицы любого размера
+//СЃРѕР·РґР°РЅРёРµ РЅСѓР»РµРІРѕР№ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 double** matrix_nul_create(int n, int m) {
-	double** out_matr = new double*[n];
+	double** out_matr = new double* [n];
 	for (int i = 0; i < n; i++)
 		out_matr[i] = new double[m];
 
@@ -199,9 +199,9 @@ double** matrix_nul_create(int n, int m) {
 	return out_matr;
 }
 
-//создание еденичной матрицы 
+//СЃРѕР·РґР°РЅРёРµ РµРґРµРЅРёС‡РЅРѕР№ РјР°С‚СЂРёС†С‹ 
 double** unit_matrix(int n) {
-	double** out_matr = new double*[n];
+	double** out_matr = new double* [n];
 	for (int i = 0; i < n; i++)
 		out_matr[i] = new double[n];
 	for (int i = 0; i < n; i++)
@@ -213,7 +213,7 @@ double** unit_matrix(int n) {
 	return out_matr;
 }
 
-//ввод матрицы любого размера
+//РІРІРѕРґ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 double** matrix_input(int n, int m) {
 	double** orig_matr = matrix_nul_create(n, m);
 	double element;
@@ -226,7 +226,7 @@ double** matrix_input(int n, int m) {
 	return orig_matr;
 }
 
-//вывод матрицы любого размера
+//РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 void matrix_output(double** orig_matr, int n, int m) {
 	cout << endl;
 	for (int i = 0; i < n; i++) {
@@ -236,7 +236,7 @@ void matrix_output(double** orig_matr, int n, int m) {
 	}
 }
 
-//функция умножения матрицы любого размера на число
+//С„СѓРЅРєС†РёСЏ СѓРјРЅРѕР¶РµРЅРёСЏ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР° РЅР° С‡РёСЃР»Рѕ
 double** matrix_multiply_num(double** matr, int n, int m, int num) {
 	double** out_matr = matrix_nul_create(n, m);
 
@@ -246,7 +246,7 @@ double** matrix_multiply_num(double** matr, int n, int m, int num) {
 	return out_matr;
 }
 
-//функция сложения матриц любого размера
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РјР°С‚СЂРёС† Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 double** matrix_addition_matrix(double** matr_1, double** matr_2, int n, int m) {
 	double** out_matr = matrix_nul_create(n, m);
 
@@ -256,10 +256,10 @@ double** matrix_addition_matrix(double** matr_1, double** matr_2, int n, int m) 
 	return out_matr;
 }
 
-//функция перемножения матриц
+//С„СѓРЅРєС†РёСЏ РїРµСЂРµРјРЅРѕР¶РµРЅРёСЏ РјР°С‚СЂРёС†
 double** matrix_multiply_matrix(double** matr_1, int n1, int m1, double** matr_2, int n2, int m2) {
 	if (m1 != n2) {
-		cout << "Выполнить умножение невозможно, учи алгем!";
+		cout << "Р’С‹РїРѕР»РЅРёС‚СЊ СѓРјРЅРѕР¶РµРЅРёРµ РЅРµРІРѕР·РјРѕР¶РЅРѕ, СѓС‡Рё Р°Р»РіРµРј!";
 		return 0;
 	}
 	double** out_matr = matrix_nul_create(n1, m2);
@@ -270,75 +270,75 @@ double** matrix_multiply_matrix(double** matr_1, int n1, int m1, double** matr_2
 	return out_matr;
 }
 
-//вычисление обратной м-цы квадратной
+//РІС‹С‡РёСЃР»РµРЅРёРµ РѕР±СЂР°С‚РЅРѕР№ Рј-С†С‹ РєРІР°РґСЂР°С‚РЅРѕР№
 double** matrix_inverse(double** matr, int n) {
 	int det = matrix_det(matr, n);
 	if (det == 0)
 	{
-		cout << "\nОпределитель равен 0. Решений для обратной м-цы нет или бесконечно много";
+		cout << "\nРћРїСЂРµРґРµР»РёС‚РµР»СЊ СЂР°РІРµРЅ 0. Р РµС€РµРЅРёР№ РґР»СЏ РѕР±СЂР°С‚РЅРѕР№ Рј-С†С‹ РЅРµС‚ РёР»Рё Р±РµСЃРєРѕРЅРµС‡РЅРѕ РјРЅРѕРіРѕ";
 		return 0;
 	}
 
 	double** inverse_matr = sqr_matrix_nul_create(n);
-	//временная матрица, полученная вычеркиванием i-ой строки и 0-ого столбца
+	//РІСЂРµРјРµРЅРЅР°СЏ РјР°С‚СЂРёС†Р°, РїРѕР»СѓС‡РµРЅРЅР°СЏ РІС‹С‡РµСЂРєРёРІР°РЅРёРµРј i-РѕР№ СЃС‚СЂРѕРєРё Рё 0-РѕРіРѕ СЃС‚РѕР»Р±С†Р°
 	double** temp = sqr_matrix_nul_create(n - 1);
 	int sign = 1;
 	for (int i = 0; i < n; i++)
-		for (int j = 0; j < n; j++){
+		for (int j = 0; j < n; j++) {
 			matrix_for_minor(matr, n, i, 0, temp);
 			inverse_matr[i][j] = (1 / det) * sign * matrix_det(temp, n - 1);
-			if (abs(inverse_matr[i][j]) < 0.000000000001) 
+			if (abs(inverse_matr[i][j]) < 0.000000000001)
 				inverse_matr[i][j] = 0;
 		}
 
 	return inverse_matr;
 }
 
-//решение системы матриц
-void matrix_system_solution(double** &matr_A, double** &matr_B, double** matr_C1, double** matr_C2, int n, int m) {
-	cout << "Выражаем матрицу B:\nB = C2 - 6A\n";
-	cout << "Подставляем матрицу B в первое уравнение и получаем:\n3A - C2 + 6A = C1\n";
-	cout << "Путём преобразований, получаем:\nA(3+6) = C1 + C2 ---> A = (C1 + C2) * (3 + 6)\n";
-	//(3+6)A = С2 + С1
+//СЂРµС€РµРЅРёРµ СЃРёСЃС‚РµРјС‹ РјР°С‚СЂРёС†
+void matrix_system_solution(double**& matr_A, double**& matr_B, double** matr_C1, double** matr_C2, int n, int m) {
+	cout << "Р’С‹СЂР°Р¶Р°РµРј РјР°С‚СЂРёС†Сѓ B:\nB = B' - 6A\n";
+	cout << "РџРѕРґСЃС‚Р°РІР»СЏРµРј РјР°С‚СЂРёС†Сѓ B РІ РїРµСЂРІРѕРµ СѓСЂР°РІРЅРµРЅРёРµ Рё РїРѕР»СѓС‡Р°РµРј:\n3A - B' + 6A = C1\n";
+	cout << "РџСѓС‚С‘Рј РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёР№, РїРѕР»СѓС‡Р°РµРј:\nA(3+6) = A' + B' ---> A = (A' + B') * 1/(3 + 6)\n";//
+	//(3+6)A = РЎ2 + РЎ1
 	cout << "______________________\n";
-	cout << "Сумма матриц C1 + C2 = \n";
+	cout << "РЎСѓРјРјР° РјР°С‚СЂРёС† A' + B' = \n";
 	double** C1_add_C2 = matrix_addition_matrix(matr_C1, matr_C2, n, m);
 	matrix_output(C1_add_C2, n, m);
 	cout << "______________________\n";
-	//получаем еденичную матрицу для 3+6
+	//РїРѕР»СѓС‡Р°РµРј РµРґРµРЅРёС‡РЅСѓСЋ РјР°С‚СЂРёС†Сѓ РґР»СЏ 3+6
 	cout << "______________________\n";
-	cout << "A = (С1 + C2) * (3 + 6) * E = \n";
+	cout << "A = (A' + B') * 1/(3 + 6) * E = \n";
 	matrix_output(C1_add_C2, n, m);
 	cout << " * ";
 	double** temp_matr = unit_matrix(m);
-	temp_matr = matrix_multiply_num(temp_matr, m, m, 9);
+	temp_matr = matrix_multiply_num(temp_matr, m, m, 9);//
 	matrix_output(temp_matr, m, m);
 	cout << "______________________\n";
-	//находим матрицу А
+	//РЅР°С…РѕРґРёРј РјР°С‚СЂРёС†Сѓ Рђ
 	cout << "______________________\n";
-	cout << "Нашли матрицу А = \n";
+	cout << "РќР°С€Р»Рё РјР°С‚СЂРёС†Сѓ Рђ = \n";
 	matr_A = matrix_multiply_matrix(C1_add_C2, n, m, temp_matr, m, m);
 	matrix_output(matr_A, n, m);
 	cout << "______________________\n";
-	//имеем выражение 3A - B = С1
-	//находим 3A
-	cout << "Находим матрицу В через первое уравнение:\nB = 3A - C1\n";
+	//РёРјРµРµРј РІС‹СЂР°Р¶РµРЅРёРµ 3A - B = РЎ1
+	//РЅР°С…РѕРґРёРј 3A
+	cout << "РќР°С…РѕРґРёРј РјР°С‚СЂРёС†Сѓ Р’ С‡РµСЂРµР· РїРµСЂРІРѕРµ СѓСЂР°РІРЅРµРЅРёРµ:\nB = 3A - A'\n";
 	cout << "______________________\n";
-	cout << "Матрица 3*A = \n";
+	cout << "РњР°С‚СЂРёС†Р° 3*A = \n";
 	double** A_to_3A = matrix_multiply_num(matr_A, n, m, 3);
 	matrix_output(A_to_3A, n, m);
 	cout << "______________________\n";
-	//находим -C1
+	//РЅР°С…РѕРґРёРј -C1
 	double** minus_matr_C1 = matrix_multiply_num(matr_C1, n, m, -1);
 	cout << "______________________\n";
-	cout << "3A - C1 = \n";
+	cout << "3A - A' = \n";
 	matrix_output(A_to_3A, n, m);
 	cout << " + ";
 	matrix_output(minus_matr_C1, n, m);
 	cout << "______________________\n";
-	//находим матрицу B
+	//РЅР°С…РѕРґРёРј РјР°С‚СЂРёС†Сѓ B
 	matr_B = matrix_addition_matrix(A_to_3A, minus_matr_C1, n, m);
-	
+
 	matrix_memory_clear(C1_add_C2, n);
 	matrix_memory_clear(temp_matr, m);
 	matrix_memory_clear(A_to_3A, n);

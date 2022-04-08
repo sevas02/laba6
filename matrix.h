@@ -1,62 +1,62 @@
-#ifndef MATRIX_OPERATIONS
+п»ї#ifndef MATRIX_OPERATIONS
 #define MATRIX_OPERATIONS
-//создание нулевой квадратной матрицы
+//СЃРѕР·РґР°РЅРёРµ РЅСѓР»РµРІРѕР№ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 double** sqr_matrix_nul_create(int n);
 
-//отчистка памяти после создания матрицы
+//РѕС‚С‡РёСЃС‚РєР° РїР°РјСЏС‚Рё РїРѕСЃР»Рµ СЃРѕР·РґР°РЅРёСЏ РјР°С‚СЂРёС†С‹
 void matrix_memory_clear(double** matr, int n);
 
-//ввод квадратной матрицы
+//РІРІРѕРґ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 double** sqr_matrix_input(int n);
 
-//вывод начальной квадратной матрицы
+//РІС‹РІРѕРґ РЅР°С‡Р°Р»СЊРЅРѕР№ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 void sqr_matrix_output(double** orig_matr, int n);
 
-//функция сложения квадратной матрицы с числом
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹ СЃ С‡РёСЃР»РѕРј
 double** sqr_matrix_addition_num(double** matr, int n, int num);
 
-//функция умножения квадратной матрицы на число
+//С„СѓРЅРєС†РёСЏ СѓРјРЅРѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹ РЅР° С‡РёСЃР»Рѕ
 double** sqr_matrix_multiply_num(double** matr, int n, int num);
 
-//функция сложения квадратных матриц
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅС‹С… РјР°С‚СЂРёС†
 double** sqr_matrix_addition_matrix(double** matr_1, double** matr_2, int n);
 
-//функция перемножения квадратных матриц
+//С„СѓРЅРєС†РёСЏ РїРµСЂРµРјРЅРѕР¶РµРЅРёСЏ РєРІР°РґСЂР°С‚РЅС‹С… РјР°С‚СЂРёС†
 double** sqr_matrix_multiply_matrix(double** matr_1, double** matr_2, int n);
 
-//расчёт матрицы X = A^2
+//СЂР°СЃС‡С‘С‚ РјР°С‚СЂРёС†С‹ X = A^2
 double** sqr_matrix_pow_2(double** orig_matr, int n);
 
-//расчёт функции f(x) = 3*x^3 + 5*x^2 + x - 2.
+//СЂР°СЃС‡С‘С‚ С„СѓРЅРєС†РёРё f(x) = 3*x^3 + 5*x^2 + x - 2.
 double** function_calculation(double** x_matr, int n);
 
-//Рекурсивная функция для нахождения определителя матрицы.
+//Р РµРєСѓСЂСЃРёРІРЅР°СЏ С„СѓРЅРєС†РёСЏ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РѕРїСЂРµРґРµР»РёС‚РµР»СЏ РјР°С‚СЂРёС†С‹.
 int matrix_det(double** matr, int n);
 
-//Возвращает матрицу minor_matr для нахождения минора, путем вырчеркивания row-ой строки и col-того столбца матрицы matr;
-void matrix_for_minor(double **matr, int n, int row, int col, double **minor_matr);
+//Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°С‚СЂРёС†Сѓ minor_matr РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РјРёРЅРѕСЂР°, РїСѓС‚РµРј РІС‹СЂС‡РµСЂРєРёРІР°РЅРёСЏ row-РѕР№ СЃС‚СЂРѕРєРё Рё col-С‚РѕРіРѕ СЃС‚РѕР»Р±С†Р° РјР°С‚СЂРёС†С‹ matr;
+void matrix_for_minor(double** matr, int n, int row, int col, double** minor_matr);
 
-//создание нулевой матрицы любого размера
+//СЃРѕР·РґР°РЅРёРµ РЅСѓР»РµРІРѕР№ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 double** matrix_nul_create(int n, int m);
 
-//ввод матрицы любого размера
+//РІРІРѕРґ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 double** matrix_input(int n, int m);
 
-//вывод матрицы любого размера
+//РІС‹РІРѕРґ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 void matrix_output(double** orig_matr, int n, int m);
 
-//функция умножения матрицы любого размера на число
+//С„СѓРЅРєС†РёСЏ СѓРјРЅРѕР¶РµРЅРёСЏ РјР°С‚СЂРёС†С‹ Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР° РЅР° С‡РёСЃР»Рѕ
 double** matrix_multiply_num(double** matr, int n, int m, int num);
 
-//функция сложения матриц любого размера
+//С„СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РјР°С‚СЂРёС† Р»СЋР±РѕРіРѕ СЂР°Р·РјРµСЂР°
 double** matrix_addition_matrix(double** matr_1, double** matr_2, int n, int m);
 
-//функция перемножения матриц
+//С„СѓРЅРєС†РёСЏ РїРµСЂРµРјРЅРѕР¶РµРЅРёСЏ РјР°С‚СЂРёС†
 double** matrix_multiply_matrix(double** matr_1, int n1, int m1, double** matr_2, int n2, int m2);
 
-//вычисление обратной м-цы
+//РІС‹С‡РёСЃР»РµРЅРёРµ РѕР±СЂР°С‚РЅРѕР№ Рј-С†С‹
 double** matrix_inverse(double** matr, int n);
 
-//решение системы матриц
-void matrix_system_solution(double** &matr_A, double** &matr_B, double** matr_C1, double** matr_C2, int n, int m);
+//СЂРµС€РµРЅРёРµ СЃРёСЃС‚РµРјС‹ РјР°С‚СЂРёС†
+void matrix_system_solution(double**& matr_A, double**& matr_B, double** matr_C1, double** matr_C2, int n, int m);
 #endif
